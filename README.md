@@ -54,9 +54,3 @@ Tests are written using [Jest](https://jestjs.io/) and cover key logic in the ap
 - `src/app/tab2` – Favorites screen
 - `src/app/tab3` – Settings screen
 - `src/app/store` – NGXS state management
-
----
-
-## 🧑‍💻 Author
-
-Created by [@mersimoski](https://github.com/mersimoski)
