@@ -1,0 +1,14 @@
+ion-item.selected {
+  --background: var(--ion-color-primary-tint);
+  --color: white;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.language-label {
+  font-size: 16px;
+}
+
+ion-item.selected ion-radio::part(container) {
+  --color-checked: white;
+}

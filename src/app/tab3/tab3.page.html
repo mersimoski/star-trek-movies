@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedLang" (ionChange)="setLanguage($event.detail.value)">
+      <ion-list-header>
+        <ion-label class="ion-text-uppercase">Preferred Language</ion-label>
+      </ion-list-header>
+    
+      <ion-item
+        *ngFor="let lang of availableLanguages"
+        (click)="setLanguage(lang.value)"
+        [class.selected]="selectedLang === lang.value"
+        button
+        detail="false"
+      >
+        <ion-label class="language-label">{{ lang.label }}</ion-label>
+        <ion-radio slot="start" [value]="lang.value"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

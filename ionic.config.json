@@ -1,0 +1,7 @@
+{
+  "name": "star-trek-movies",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

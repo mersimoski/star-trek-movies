@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favorites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="favoriteMovies.length > 0; else emptyState">
+  <ion-list>
+    <ion-item *ngFor="let movie of favoriteMovies" (click)="removeFavorite(movie)" color="light">
+      <ng-container *ngIf="getTitleInfo(movie) as titleInfo">
+        <ion-label>
+          <h2>{{ titleInfo.title }}</h2>
+    
+          <p *ngIf="titleInfo.original">
+            <strong>Original:</strong> {{ titleInfo.original }}
+          </p>
+    
+          <p *ngIf="movie.stardateFrom && movie.stardateTo">
+            <strong>Stardate:</strong> {{ movie.stardateFrom }} – {{ movie.stardateTo }}
+          </p>
+    
+          <p *ngIf="movie.usReleaseDate">
+            <strong>US Release:</strong> {{ movie.usReleaseDate }}
+          </p>
+        </ion-label>
+      </ng-container>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ng-template #emptyState>
+  <ion-content class="ion-padding">
+    <p>No favorites yet.</p>
+  </ion-content>
+</ng-template>
