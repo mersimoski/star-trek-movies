@@ -4,12 +4,12 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: TabsPage,
     children: [
       {
         path: 'home',
-        loadComponent: () => import('../tab1/tab1.page').then(m => m.Tab1Page) // root -> tab1
+        loadComponent: () => import('../tab1/tab1.page').then(m => m.Tab1Page)
       },
       {
         path: 'favorites',
