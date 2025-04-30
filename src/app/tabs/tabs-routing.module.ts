@@ -4,9 +4,19 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: TabsPage,
     children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
       {
         path: 'home',
         loadComponent: () => import('../tab1/tab1.page').then(m => m.Tab1Page)
@@ -22,6 +32,7 @@ const routes: Routes = [
     ]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
